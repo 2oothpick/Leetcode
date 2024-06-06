@@ -5,5 +5,3 @@ def removeDuplicates(nums: list[int]) -> int:
             nums[j] = nums[i]
             j += 1
     return j
-
-
