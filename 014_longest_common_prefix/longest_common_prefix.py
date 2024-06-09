@@ -1,4 +1,4 @@
-strs = ["cir","car"]
+strs = ["reflower","flow","flight"]
 newStr = ''
 
 def longestCommonPrefix(strs):
@@ -8,21 +8,24 @@ def longestCommonPrefix(strs):
     """
     newStr = ''
     if (len(strs) > 2):
-        for idx in range(len(strs)):
-            for item in strs[idx]:
-                if (idx != len(strs)-1):
-                    for item1 in strs[idx+1]:
-                        if (idx != len(strs)-2):
-                            for item2 in strs[idx+2]:
-                                if (item == item1 and item == item2):
-                                    newStr += item
+        for Aidx in range(len(strs)):
+            for StrIdx in range(len(strs[Aidx])):
+                if (Aidx != len(strs)-1):
+                    for sndStrIdx in range(len(strs[Aidx+1])):
+                        if (Aidx != len(strs)-2):
+                            for thrdStrIdx in range(len(strs[Aidx+2])):
+                                   if (strs[Aidx][StrIdx] == strs[Aidx+1][sndStrIdx] and strs[Aidx][StrIdx] == strs[Aidx+2][thrdStrIdx]):
+                                    newStr += strs[Aidx][StrIdx]
     elif (len(strs) == 2):
-        for idx in range(len(strs)):
-            for item in strs[idx]:
-                if (idx != len(strs)-1):
-                    for item1 in strs[idx+1]:
-                        if (item == item1):
-                                    newStr += item
+        for Aidx in range(len(strs)):
+            for StrIdx in range(len(strs[Aidx])):
+                if (Aidx != len(strs)-1):
+                    for sndStrIdx in range(len(strs[Aidx+1])):
+                        if (StrIdx == sndStrIdx):
+                            if (strs[Aidx][StrIdx] == strs[Aidx+1][sndStrIdx]):
+                                newStr += strs[Aidx+1][Aidx]
+                        else:
+                            break
     else:
         newStr = strs[0]
     return newStr
